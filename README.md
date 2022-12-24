@@ -39,11 +39,13 @@ The fastest route to productivity will come from opening this project remotely i
 
 Once the container is ready, the project will be buildable, lintable, and testable. Linting and formatting will be automatically done as you save. Check the _Problems_ tab for lint issues. Test cases will be automatically discovered in the _Testing_ tab. You can run all the tests or start debugging from here.
 
+Alternatively, you can open the project in [Codespaces](https://github.com/features/codespaces) directly from GitHub. This will provide an identical Dev Container, but through VSCode on the browser. This is the fastest method to get your development environment up and running. However, the web editor is not as smooth as the native one.
+
 If running locally instead, you will need Python3 with [hatch](https://github.com/pypa/hatch) (`pip install hatch`). In this scenario, it might be worthwhile to do the point VSCode to the Python interpreter of the dev environment in the project (`hatch run dev:python -c "import sys;print(sys.executable)"`).
 
 ### Other editors
 
-Skip this section if you are using Dev Containers with VSCode.
+Skip this section if you are using Dev Containers or Codespaces.
 
 All following setup is optional. They are meant to increase life-of-quality during development.
 

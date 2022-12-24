@@ -18,10 +18,14 @@ app = typer.Typer(help=__doc__)
 
 
 @app.command(name="zoo")
-def zoo(favorite: Optional[str] = None) -> None:
+def zoo(
+    favorite: Optional[str] = typer.Option(  # noqa: B008
+        config.favorite, help="A word from your favorite quote."
+    )
+) -> None:
     """Print a random quote from Zoolander."""
     if favorite is not None:
-        # If an option is passed, write to the config file.
+        # If an option is passed, write it to the config file.
         config.dump(favorite=favorite)
 
     quotes = [

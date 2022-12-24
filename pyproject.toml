@@ -48,7 +48,6 @@ dependencies = [
   "isort==5.11.4",
   "mypy==0.991",
   "pep8-naming==0.13.3",
-  "pytest==7.2.0",
   "types-PyYAML==6.0.12.2",
 ]
 

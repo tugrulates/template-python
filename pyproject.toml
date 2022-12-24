@@ -1,0 +1,83 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "my-cli"
+version = "0.0.1"
+description = 'My package description'
+readme = "README.md"
+requires-python = ">=3.7"
+license = "MIT"
+keywords = ["mykeywords"]
+authors = [{ name = "My Name", email = "my.email@test.com" }]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python",
+  "Environment :: Console",
+  "License :: OSI Approved :: MIT License",
+]
+dependencies = [
+  "typer[all]==0.7.0",
+]
+
+[project.scripts]
+my-cli = "my_cli.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/mygithubuser/mycli"
+
+[tool.hatch.build]
+artifacts = [
+  "my-cli/static/**",
+]
+
+[tool.hatch.envs.dev]
+dependencies = [
+  "bandit[toml]==1.7.4",
+  "black==22.12.0",
+  "flake8-bugbear==22.12.6",
+  "flake8-builtins==2.1.0",
+  "flake8-comprehensions==3.10.1",
+  "flake8-docstrings==1.6.0",
+  "flake8-encodings[classes]==0.5.0.post1",
+  "flake8-return==1.2.0",
+  "flake8-simplify==0.19.3",
+  "flake8==6.0.0",
+  "isort==5.11.4",
+  "mypy==0.991",
+  "pep8-naming==0.13.3",
+  "pytest==7.2.0",
+  "types-PyYAML==6.0.12.2",
+]
+
+[tool.hatch.envs.test]
+dependencies = [
+  "pytest-cov==4.0.0",
+  "pytest==7.2.0",
+]
+
+[tool.hatch.envs.default.scripts]
+lint = [
+  "flake8 .",
+  "black . --check --diff",
+  "isort . --check-only --diff",
+  "mypy .",
+  "bandit -qr -c pyproject.toml .",
+]
+fmt = [
+  "isort .",
+  "black .",
+  "check",
+]
+test = [
+  "pytest -v --cov my_cli",
+]
+
+[tool.bandit]
+exclude_dirs = ["tests"]
+skips = ["B311"]  # delete to see bandit check
+
+[tool.isort]
+profile = "black"

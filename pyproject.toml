@@ -72,7 +72,10 @@ fmt = [
   "check",
 ]
 test = [
-  "pytest -v --cov my_cli",
+  "pytest -v",
+]
+cov = [
+  "pytest -v --cov my_cli --cov-report xml",
 ]
 
 [tool.bandit]

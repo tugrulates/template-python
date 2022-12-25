@@ -45,6 +45,8 @@ jobs:
       - run: pip install hatch
       - run: hatch run test:cov
       - uses: codecov/codecov-action@v3
+        with:
+          fail_ci_if_error: false # set to true after configuring in https://docs.codecov.com
 
   build:
     runs-on: ubuntu-latest

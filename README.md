@@ -5,6 +5,7 @@
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
 [![types - Mypy](https://img.shields.io/badge/types-Mypy-blue.svg)](https://github.com/python/mypy)
+[![security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
 [![License - MIT](https://img.shields.io/badge/license-MIT-9400d3.svg)](https://spdx.org/licenses/)
 
 This project contains template code for a Python CLI app. It attempts to create a Python development environment that is simple but allows a fast development cycle to produce high-quality code. This is inspired by the _“Boring Python”_ posts [^1][^2] by [James Bennett](https://www.b-list.org/).
@@ -103,7 +104,7 @@ Make sure your integration flow includes pull requests. Merge PRs only when the 
 
 All dependencies are pinned to a specific version. Dependabot will send occasional pull requests to update dependencies to available versions. Merge them only when CI is passing.
 
-Pinning versions can be problematic if other packages depend on yours. Since this is a CLI app package, that is not a big concern. However, this will be remedied with a lock file once _hatch_ supports locking dependencies.
+This is not a strict implementation of reproducible builds, since indirect dependencies are not locked to specific versions. If an indirect dependency has a new version that is incompatible with our app, it might break our integration. This will be remedied with a lock file once _hatch_ supports locking dependencies.
 
 ## Questions, Feedback, and Contributions
 

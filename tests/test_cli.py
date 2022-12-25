@@ -1,9 +1,6 @@
 """Unittests for the CLI."""
 
 
-from pathlib import Path
-
-import pytest
 from typer.testing import CliRunner
 
 from my_cli import cli

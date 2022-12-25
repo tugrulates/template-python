@@ -1,1 +1,0 @@
-Put static files in the 'static' folder and they will be bundled in your package.

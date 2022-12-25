@@ -12,42 +12,47 @@ runner = CliRunner()
 
 
 @pytest.fixture
-def config(tmp_path: Path) -> cli.Config:
+def test_config(tmp_path: Path) -> cli.Config:
     """Fixture for config."""
-    cli.config.PATH = tmp_path / "config.json"
+    cli.config = cli.Config(tmp_path / "config.json")
+    cli.config.dump()
     return cli.config
 
 
-def test_bare(config: cli.Config) -> None:
-    """Test invocation with no arguments."""
-    config.dump()
-    result = runner.invoke(cli.app)
-    assert result.exit_code != 0
-    assert "Usage:" in result.stdout
-
-
-def test_help(config: cli.Config) -> None:
+def test_help(test_config: cli.Config) -> None:
     """Test help."""
-    config.dump()
+    test_config.load()
     result = runner.invoke(cli.app, ["--help"])
     assert result.exit_code == 0
     assert "Usage:" in result.stdout
 
 
-def test_zoo(config: cli.Config):
+def test_quote(test_config: cli.Config):
     """Test Zoolander quote."""
-    config.dump()
-    result = runner.invoke(cli.app, ["zoo"])
+    test_config.load()
+    result = runner.invoke(cli.app)
     assert result.exit_code == 0
     assert len(result.stdout.strip().split("\n")) == 1
 
 
-def test_zoo_favorite(config: cli.Config):
+def test_favorite_quote(test_config: cli.Config):
     """Test Zoolander quote."""
-    config.dump()
-    result = runner.invoke(cli.app, ["zoo", "--favorite=break-dance"])
+    test_config.load()
+    print(test_config.path)
+    result = runner.invoke(cli.app, ["--favorite=break-dance"])
+    print(test_config.prefs)
     assert result.exit_code == 0
     assert result.stdout.strip() == "They're break-dance fighting."
-    result = runner.invoke(cli.app, ["zoo"])
+    print(test_config.path)
+    print(test_config.prefs)
+    result = runner.invoke(cli.app)
     assert result.exit_code == 0
     assert result.stdout.strip() == "They're break-dance fighting."
+
+
+def test_favorite_quote_missing(test_config: cli.Config):
+    """Test Zoolander quote."""
+    test_config.load()
+    result = runner.invoke(cli.app, ["--favorite=derek"])
+    assert result.exit_code == 0
+    assert result.stdout.strip() == "You've done nothing! NOTHIIIING!"

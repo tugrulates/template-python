@@ -63,7 +63,7 @@ lint = [
   "flake8 .",
   "black . --check --diff",
   "isort . --check-only --diff",
-  "mypy .",
+  "mypy . --check-untyped-defs",
   "bandit -qr -c pyproject.toml .",
 ]
 fmt = [
@@ -77,7 +77,6 @@ test = [
 
 [tool.bandit]
 exclude_dirs = ["tests"]
-skips = ["B311"]  # delete to see bandit check
 
 [tool.isort]
 profile = "black"

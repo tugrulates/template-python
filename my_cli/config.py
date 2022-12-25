@@ -1,18 +1,14 @@
 """Persistent user configuration."""
 
 
-import dataclasses
 import json
-from dataclasses import dataclass
+import logging
 from pathlib import Path
-from typing import Optional
+from typing import Any, Dict
 
 import typer
 
-APP_NAME = "my-cli"  # change this
 
-
-@dataclass
 class Config:
     """
     Persistent config in app folder.
@@ -21,18 +17,32 @@ class Config:
     invocations. See below for how to read and write to this configuration.
     """
 
-    PATH = Path(typer.get_app_dir(APP_NAME)) / "config.json"
+    def __init__(self, path: Path) -> None:
+        """Set up a new config for the given config file path."""
+        self.path = path
+        self.prefs: Dict[str, Any] = {}
 
-    favorite: Optional[str] = None
-    # add more serializable config values here
-
-    def load(self):
+    def load(self) -> None:
         """Read config from config file."""
-        if Config.PATH.is_file():
-            self.__init__(**dict(json.loads(Config.PATH.read_text(encoding="utf-8"))))
+        if self.path.is_file():
+            prefs = dict(json.loads(self.path.read_text(encoding="utf-8")))
+            self.prefs = {k: prefs[k] for k in prefs if isinstance(k, str)}
 
-    def dump(self, **kwargs):
+    def dump(self) -> None:
         """Write config back to config file."""
-        self.__init__(**kwargs)
-        Config.PATH.parent.mkdir(parents=True, exist_ok=True)
-        Config.PATH.write_text(json.dumps(dataclasses.asdict(self)), encoding="utf-8")
+        self.path.parent.mkdir(parents=True, exist_ok=True)
+        self.path.write_text(json.dumps(self.prefs), encoding="utf-8")
+
+    def option(self, name: str, **kwargs) -> Any:
+        """Return an option info for an option that sync with the config file."""
+
+        def callback(ctx: typer.Context, value: Any):
+            if ctx.resilient_parsing:
+                return None
+            if value is not None:
+                logging.warning("dumping %s %s", value, name)
+                self.prefs[name] = value
+                self.dump()
+            return value
+
+        return typer.Option(lambda: self.prefs.get(name), callback=callback, **kwargs)

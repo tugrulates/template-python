@@ -75,7 +75,7 @@ test = [
   "pytest -v",
 ]
 cov = [
-  "pytest -v --cov my_cli --cov-report lcov",
+  "pytest -v --cov my_cli --cov-report lcov --cov-fail-under=80",
 ]
 
 [tool.bandit]

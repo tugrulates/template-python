@@ -34,10 +34,10 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - run: pip install hatch
       - run: hatch run test:cov
-    - uses: coverallsapp/github-action@master
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        path-to-lcov: coverage.xml
+      - uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: coverage.xml
 
   build:
     runs-on: ubuntu-latest

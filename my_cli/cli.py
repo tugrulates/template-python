@@ -1,6 +1,7 @@
 """Help message for my CLI app. Change this."""
 
 
+import logging
 import random
 from pathlib import Path
 from typing import Optional
@@ -9,57 +10,38 @@ import typer
 
 from my_cli.config import Config
 
+APP_NAME = "my-cli"  # change this
+
+
 # Persistent user config
-config = Config()
+config = Config(Path(typer.get_app_dir(APP_NAME)) / "config.json")
 config.load()
 
-# Commands.
+# App object enclosing the commands.
 app = typer.Typer(help=__doc__)
 
+# An option that sync its values to the config file.
+# $ my-cli --favorite=hansel  # write 'favorite=value' to config file
+# $ my-cli                    # reuse from config file
+# $ my-cli --favorite=        # reset favorite
+FavoriteOption = config.option("favorite", help="Favorite quote.")
 
-@app.command(name="zoo")
-def zoo(favorite: Optional[str] = None) -> None:
+
+@app.command()
+def quote(favorite: Optional[str] = FavoriteOption) -> None:
     """Print a random quote from Zoolander."""
-    if favorite is not None:
-        # If an option is passed, write to the config file.
-        config.dump(favorite=favorite)
-
-    quotes = [
-        "It's that damn Hansel! He's so hot right now!",
-        "Hansel... so hot right now... Hansel.",
-        "Mugatu is so hot right now",
-        "What is this? A center for ants?",
-        "They're *in* the computer?",
-        "They're break-dance fighting.",
-    ]
-    # We can read persistent options from the config file directly.
-    quotes = [x for x in quotes if config.favorite.lower() in x.lower()]
-
-    if quotes:
-        print(random.choice(quotes))
-    else:
-        print("You've done nothing! NOTHIIIING!")
-
-
-# Sub commands under 'my-cli static' invocation.
-static = typer.Typer()
-app.add_typer(static, name="static", help="Subcommand example.")
-
-
-@static.command("list")
-def static_files() -> None:
-    """List static files."""
     # Static files will be in site-packages next to this file.
-    static_file_folder = Path(__file__).parent / "static"
-    for path in static_file_folder.iterdir():
-        print(path)
+    quotes_path = Path(__file__).parent / "static" / "my_quotes.txt"
+    quotes = quotes_path.read_text(encoding="utf-8").strip().split("\n")
 
+    # Filter quotes using the favorite filter.
+    if favorite:
+        logging.warning("favorite")
+        quotes = [x for x in quotes if favorite.lower() in x.lower()]
 
-@static.command("print")
-def static_print() -> None:
-    """List static files."""
-    static_file_folder = Path(__file__).parent / "static" / "my_static_file.txt"
-    print(static_file_folder.read_text(encoding="utf-8").strip())
+    # Random number generators in the standard library are not suitable for security.
+    # Drop the 'nosec' below and run 'hatch run lint:lint' to see lint checks in action.
+    print(random.choice(quotes or ["You've done nothing! NOTHIIIING!"]))  # nosec
 
 
 if __name__ == "__main__":

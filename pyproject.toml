@@ -61,10 +61,10 @@ dependencies = [
 [tool.hatch.envs.default.scripts]
 lint = [
   "flake8 .",
-  "black . --check --diff",
-  "isort . --check-only --diff",
   "mypy . --check-untyped-defs",
   "bandit -qr -c pyproject.toml .",
+  "black . --check --diff",
+  "isort . --check-only --diff",
 ]
 fmt = [
   "isort .",
@@ -72,11 +72,17 @@ fmt = [
   "check",
 ]
 test = [
-  "pytest -v --cov my_cli",
+  "pytest -v",
+]
+cov = [
+  "pytest -v --cov my_cli --cov-report xml --cov-fail-under=80",
 ]
 
 [tool.bandit]
 exclude_dirs = ["tests"]
+
+[tool.mypy]
+strict = true
 
 [tool.isort]
 profile = "black"

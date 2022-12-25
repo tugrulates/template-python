@@ -35,6 +35,19 @@ jobs:
       - run: pip install hatch
       - run: hatch run test:test
 
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+      - run: pip install hatch
+      - run: hatch run test:cov
+      - uses: codecov/codecov-action@v3
+        with:
+          fail_ci_if_error: false # set to true after configuring in https://docs.codecov.com
+
   build:
     runs-on: ubuntu-latest
     steps:

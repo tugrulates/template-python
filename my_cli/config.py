@@ -5,6 +5,7 @@ import dataclasses
 import json
 from dataclasses import dataclass
 from pathlib import Path
+from typing import Optional
 
 import typer
 
@@ -22,7 +23,7 @@ class Config:
 
     PATH = Path(typer.get_app_dir(APP_NAME)) / "config.json"
 
-    favorite: str = ""
+    favorite: Optional[str] = None
     # add more serializable config values here
 
     def load(self):

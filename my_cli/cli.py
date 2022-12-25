@@ -36,8 +36,9 @@ def zoo(
         "They're *in* the computer?",
         "They're break-dance fighting.",
     ]
-    # We can read persistent options from the config file directly.
-    quotes = [x for x in quotes if config.favorite.lower() in x.lower()]
+    if config.favorite:
+        # We can read persistent options from the config file directly.
+        quotes = [x for x in quotes if config.favorite.lower() in x.lower()]
 
     if quotes:
         print(random.choice(quotes))

@@ -103,6 +103,7 @@ There is a robust CI pipeline already setup. It contains the following jobs.
 
 -   **lint**: Checks that all lint checkers are happy and pre-submit would succeed.
 -   **test**: Checks that all unit tests are passing on Linux, Mac, and Windows, with different Python versions.
+-   **coverage**: Checks that code coverage is above 80%. Optionally, uploads coverage to [Codecov](https://codecov.io).
 -   **build**: Checks that a wheel is buildable and runs standard smoke tests against it.
 
 Make sure your integration flow includes pull requests. Merge PRs only when the CI is successful, and you will have a good integration setup. Commit to main directly, and you will become a sad developer.

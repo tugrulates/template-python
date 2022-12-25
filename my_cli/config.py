@@ -2,7 +2,6 @@
 
 
 import json
-import logging
 from pathlib import Path
 from typing import Any, Dict
 
@@ -40,7 +39,6 @@ class Config:
             if ctx.resilient_parsing:
                 return None
             if value is not None:
-                logging.warning("dumping %s %s", value, name)
                 self.prefs[name] = value
                 self.dump()
             return value

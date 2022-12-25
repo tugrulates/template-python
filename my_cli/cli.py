@@ -1,7 +1,6 @@
 """Help message for my CLI app. Change this."""
 
 
-import logging
 import random
 from pathlib import Path
 from typing import Optional
@@ -36,7 +35,6 @@ def quote(favorite: Optional[str] = FavoriteOption) -> None:
 
     # Filter quotes using the favorite filter.
     if favorite:
-        logging.warning("favorite")
         quotes = [x for x in quotes if favorite.lower() in x.lower()]
 
     # Random number generators in the standard library are not suitable for security.

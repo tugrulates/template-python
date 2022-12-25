@@ -33,6 +33,16 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - run: pip install hatch
+      - run: hatch run test:test
+
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+      - run: pip install hatch
       - run: hatch run test:cov
       - uses: coverallsapp/github-action@master
         with:

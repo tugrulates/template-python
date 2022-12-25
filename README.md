@@ -1,4 +1,4 @@
-# A template CLI project (**template-python-cli**)
+# A template Python project (**template-python**)
 
 [![CI](https://github.com/tugrulates/template-python-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/tugrulates/template-python-cli/actions/workflows/ci.yml)
 [![Hatch project](https://img.shields.io/badge/%F0%9F%A5%9A-Hatch-4051b5.svg)](https://github.com/pypa/hatch)
@@ -8,10 +8,12 @@
 [![security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
 [![License - MIT](https://img.shields.io/badge/license-MIT-9400d3.svg)](https://spdx.org/licenses/)
 
-This project contains template code for a Python CLI app. It attempts to create a Python development environment that is simple but allows a fast development cycle to produce high-quality code. This is inspired by the _“Boring Python”_ posts [^1][^2] by [James Bennett](https://www.b-list.org/).
+This project contains sample code for a Python CLI app. It attempts to create a Python development environment that is simple but allows a fast development cycle to produce high-quality code. This is inspired by the _“Boring Python”_ posts [^1][^2] by [James Bennett](https://www.b-list.org/).
 
 [^1]: [Boring Python: dependency management](https://www.b-list.org/weblog/2022/may/13/boring-python-dependencies/)
 [^2]: [Boring Python: code quality](https://www.b-list.org/weblog/2022/dec/19/boring-python-code-quality/)
+
+## Features
 
 The following libraries and frameworks are configured and working out of the box.
 
@@ -110,8 +112,8 @@ This is not a strict implementation of reproducible builds, since indirect depen
 
 I hope you will find this template useful. You can create an issue if you have a question, or if something is not working right for you. PRs are welcome if you would like to fix or add anything.
 
-## Final Thoughts
+## Final thoughts and todos
 
-The project scaffolds a basic CLI application. You can build upon this for your own, or you can also strip the CLI parts altogether to build a different type of Python package. I plan to do a follow-up for other kinds, e.g., a server or a GUI.
+The project scaffolds a basic CLI application. You can build upon this for your own, or you can also strip the CLI parts altogether to build a different type of Python package. Actual templatign a la [Cookiecuter](https://www.cookiecutter.io/) could be useful.
 
 This project does not yet include an end-to-end test. It would be an improvement to automatically download CI artifacts from the main branch and run tests against them.

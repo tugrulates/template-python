@@ -14,7 +14,7 @@ This project contains sample code for a Python CLI app. It attempts to create a 
 [^1]: [Boring Python: dependency management](https://www.b-list.org/weblog/2022/may/13/boring-python-dependencies/)
 [^2]: [Boring Python: code quality](https://www.b-list.org/weblog/2022/dec/19/boring-python-code-quality/)
 
-## ✨Features
+## ✨ Features
 
 The following libraries and frameworks are configured and working out of the box.
 
@@ -33,7 +33,7 @@ The following libraries and frameworks are configured and working out of the box
 -   [EditorConfig](https://editorconfig.org/): Generic editor config.
 -   Some niceties for [VS Code](https://code.visualstudio.com/) (see below).
 
-## ⚙️Setup
+## ⚙️ Setup
 
 Do either of the following.
 
@@ -69,7 +69,7 @@ pip install hatch
 pip install pre-commit && pre-commit install-hooks
 ```
 
-## 💻Development cycle
+## 💻 Development cycle
 
 -   Run your CLI app
 
@@ -97,7 +97,7 @@ pre-commit run --all-files
 
 Check out the example app code to get accustomed to the setup. You will need to change any name that starts with “my”, like _my description_.
 
-## 🤖Continuous integration
+## 🤖 Continuous integration
 
 There is a robust CI pipeline already setup. It contains the following jobs.
 
@@ -108,17 +108,17 @@ There is a robust CI pipeline already setup. It contains the following jobs.
 
 Make sure your integration flow includes pull requests. Merge PRs only when the CI is successful, and you will have a good integration setup. Commit to main directly, and you will become a sad developer.
 
-## 📦Dependency management
+## 📦 Dependency management
 
 All dependencies are pinned to a specific version. Dependabot will send occasional pull requests to update dependencies to available versions. Merge them only when CI is passing.
 
 This is not a strict implementation of reproducible builds, since indirect dependencies are not locked to specific versions. If an indirect dependency has a new version that is incompatible with our app, it might break our integration. This will be remedied with a lock file once _hatch_ supports locking dependencies.
 
-## 👋Help and contributions
+## 👋 Help and contributions
 
 I hope you will find this template useful. You can create an issue if you have a question, or if something is not working right for you. PRs are welcome if you would like to fix or add anything.
 
-## 🚩Roadmap
+## 🚩 Roadmap
 
 The project scaffolds a basic CLI application. You can build upon this for your own, or you can also strip the CLI parts altogether to build a different type of Python package. Actual templatign a la [Cookiecuter](https://www.cookiecutter.io/) could be useful.
 

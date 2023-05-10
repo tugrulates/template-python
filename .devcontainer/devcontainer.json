@@ -11,7 +11,8 @@
             "extensions": [
                 "EditorConfig.EditorConfig",
                 "esbenp.prettier-vscode",
-                "GitHub.vscode-pull-request-github"
+                "GitHub.vscode-pull-request-github",
+                "ms-python.flake8"
             ]
         }
     }

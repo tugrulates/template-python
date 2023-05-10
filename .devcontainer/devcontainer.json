@@ -5,7 +5,7 @@
         "ghcr.io/devcontainers-contrib/features/hatch:1": {},
         "ghcr.io/devcontainers-contrib/features/pre-commit:1": {}
     },
-    "postCreateCommand": "pip install -e . && pip install $(hatch -e dev dep show requirements) && pip install $(hatch -e test dep show requirements) && (if [ -e .git ]; then pre-commit install-hooks; fi)",
+    "postCreateCommand": "pip install -e . && pip install $(hatch dep show requirements -f dev -f test) && (if [ -e .git ]; then pre-commit install-hooks; fi)",
     "customizations": {
         "vscode": {
             "extensions": [

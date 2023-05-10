@@ -22,6 +22,7 @@ classifiers = [
   "Environment :: Console",
   "License :: OSI Approved :: MIT License",
 ]
+
 dependencies = [
   "typer[all]==0.9.0",
 ]
@@ -31,16 +32,8 @@ Documentation = "https://github.com/mygithubuser/mycli#readme"
 Issues = "https://github.com/mygithubuser/mycli/issues"
 Source = "https://github.com/mygithubuser/mycli"
 
-[project.scripts]
-my-cli = "my_cli.cli:app"
-
-[tool.hatch.build]
-artifacts = [
-  "my-cli/static/**",
-]
-
-[tool.hatch.envs.dev]
-dependencies = [
+[project.optional-dependencies]
+dev = [
   "bandit[toml]==1.7.4",
   "black==22.12.0",
   "flake8-bugbear==22.12.6",
@@ -54,15 +47,26 @@ dependencies = [
   "isort==5.11.4",
   "mypy==0.991",
   "pep8-naming==0.13.3",
-  "pytest==7.2.0",
   "types-PyYAML==6.0.12.2",
 ]
-
-[tool.hatch.envs.test]
-dependencies = [
+test = [
   "pytest-cov==4.0.0",
   "pytest==7.2.0",
 ]
+
+[project.scripts]
+my-cli = "my_cli.cli:app"
+
+[tool.hatch.build]
+artifacts = [
+  "my-cli/static/**",
+]
+
+[tool.hatch.envs.dev]
+features = ["dev"]
+
+[tool.hatch.envs.test]
+features = ["test"]
 
 [tool.hatch.envs.default.scripts]
 lint = [

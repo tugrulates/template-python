@@ -27,15 +27,12 @@ dependencies = [
 ]
 
 [project.urls]
-Documentation = "https://github.com/tugrulates/template-python#readme"
-Issues = "https://github.com/tugrulates/template-python/issues"
-Source = "https://github.com/tugrulates/template-python"
+Documentation = "https://github.com/mygithubuser/mycli#readme"
+Issues = "https://github.com/mygithubuser/mycli/issues"
+Source = "https://github.com/mygithubuser/mycli"
 
 [project.scripts]
 my-cli = "my_cli.cli:app"
-
-[project.urls]
-Homepage = "https://github.com/mygithubuser/mycli"
 
 [tool.hatch.build]
 artifacts = [

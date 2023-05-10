@@ -37,9 +37,9 @@ The following libraries and frameworks are configured and working out of the box
 
 Do either of the following.
 
-- __Use this template__ button on GitHub to create a new project
-- __Open in a codespace__ button on GitHub to start playing with the project
-- Download, copy, or clone the project
+-   **Use this template** button on GitHub to create a new project
+-   **Open in a codespace** button on GitHub to start playing with the project
+-   Download, copy, or clone the project
 
 ### Visual Studio Code
 
@@ -89,10 +89,10 @@ hatch run dev:lint
 hatch run test:test
 ```
 
--   Run pre-submit checks on all files
+-   Run pre-commit checks on all files
 
 ```shell
-pre-submit run --all-files
+pre-commit run --all-files
 ```
 
 Check out the example app code to get accustomed to the setup. You will need to change any name that starts with “my”, like _my description_.
@@ -101,7 +101,7 @@ Check out the example app code to get accustomed to the setup. You will need to 
 
 There is a robust CI pipeline already setup. It contains the following jobs.
 
--   **lint**: Checks that all lint checkers are happy and pre-submit would succeed.
+-   **lint**: Checks that all lint checkers are happy and pre-commit would succeed.
 -   **test**: Checks that all unit tests are passing on Linux, Mac, and Windows, with different Python versions.
 -   **coverage**: Checks that code coverage is above 80%. Optionally, uploads coverage to [Codecov](https://codecov.io).
 -   **build**: Checks that a wheel is buildable and runs standard smoke tests against it.

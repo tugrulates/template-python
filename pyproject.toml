@@ -13,14 +13,23 @@ keywords = ["mykeywords"]
 authors = [{ name = "My Name", email = "my.email@test.com" }]
 classifiers = [
   "Development Status :: 3 - Alpha",
-  "Programming Language :: Python :: 3",
   "Programming Language :: Python",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
   "Environment :: Console",
   "License :: OSI Approved :: MIT License",
 ]
 dependencies = [
   "typer[all]==0.9.0",
 ]
+
+[project.urls]
+Documentation = "https://github.com/tugrulates/template-python#readme"
+Issues = "https://github.com/tugrulates/template-python/issues"
+Source = "https://github.com/tugrulates/template-python"
 
 [project.scripts]
 my-cli = "my_cli.cli:app"

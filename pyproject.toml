@@ -27,11 +27,6 @@ dependencies = [
   "typer[all]==0.9.0",
 ]
 
-[project.urls]
-Documentation = "https://github.com/mygithubuser/mycli#readme"
-Issues = "https://github.com/mygithubuser/mycli/issues"
-Source = "https://github.com/mygithubuser/mycli"
-
 [project.optional-dependencies]
 dev = [
   "bandit[toml]==1.7.5",
@@ -56,6 +51,11 @@ test = [
 
 [project.scripts]
 my-cli = "my_cli.cli:app"
+
+[project.urls]
+Documentation = "https://github.com/mygithubuser/mycli#readme"
+Issues = "https://github.com/mygithubuser/mycli/issues"
+Source = "https://github.com/mygithubuser/mycli"
 
 [tool.hatch.build]
 artifacts = [

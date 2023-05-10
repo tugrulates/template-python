@@ -13,8 +13,12 @@ keywords = ["mykeywords"]
 authors = [{ name = "My Name", email = "my.email@test.com" }]
 classifiers = [
   "Development Status :: 3 - Alpha",
-  "Programming Language :: Python :: 3",
   "Programming Language :: Python",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
   "Environment :: Console",
   "License :: OSI Approved :: MIT License",
 ]
@@ -22,11 +26,13 @@ dependencies = [
   "typer[all]==0.9.0",
 ]
 
+[project.urls]
+Documentation = "https://github.com/mygithubuser/mycli#readme"
+Issues = "https://github.com/mygithubuser/mycli/issues"
+Source = "https://github.com/mygithubuser/mycli"
+
 [project.scripts]
 my-cli = "my_cli.cli:app"
-
-[project.urls]
-Homepage = "https://github.com/mygithubuser/mycli"
 
 [tool.hatch.build]
 artifacts = [

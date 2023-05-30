@@ -7,8 +7,6 @@ from typing import Optional
 
 import typer
 
-APP_NAME = "my-cli"  # change this
-
 
 # App object enclosing the commands.
 app = typer.Typer(help=__doc__)

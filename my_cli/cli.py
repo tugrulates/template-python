@@ -7,7 +7,6 @@ from typing import Optional
 
 import typer
 
-
 # App object enclosing the commands.
 app = typer.Typer(help=__doc__)
 

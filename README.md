@@ -49,7 +49,7 @@ The fastest route to productivity will come from opening this project remotely i
 
 Once the container is ready, the project will be buildable, lintable, and testable. Linting and formatting will be automatically done as you save. Check the _Problems_ tab for lint issues. Test cases will be automatically discovered in the _Testing_ tab. You can run all the tests or start debugging from here.
 
-If running locally instead, you will need Python3 with [hatch](https://github.com/pypa/hatch) (`pip install hatch`). In this scenario, it might be worthwhile to do the point VSCode to the Python interpreter of the dev environment in the project (`hatch run dev:python -c "import sys;print(sys.executable)"`).
+If running locally instead, you will need Python3 with [hatch](https://github.com/pypa/hatch) (`pip install hatch`). In this scenario, it might be worthwhile to point VSCode to the Python interpreter of the dev environment in the project (`hatch run dev:python -c "import sys;print(sys.executable)"`).
 
 ### Other editors
 
@@ -120,6 +120,6 @@ I hope you will find this template useful. You can create an issue if you have a
 
 ## 🚩 Roadmap
 
-The project scaffolds a basic CLI application. You can build upon this for your own, or you can also strip the CLI parts altogether to build a different type of Python package. Actual templatign a la [Cookiecuter](https://www.cookiecutter.io/) could be useful.
+The project scaffolds a basic CLI application. You can build upon this for your own, or you can strip the CLI parts altogether to build a different type of Python package. Actual templating a la [Cookiecuter](https://www.cookiecutter.io/) could be useful.
 
 This project does not yet include an end-to-end test. It would be an improvement to automatically download CI artifacts from the main branch and run tests against them.

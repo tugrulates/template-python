@@ -3,7 +3,7 @@
 
 from typer.testing import CliRunner
 
-from my_cli import cli
+from my_package import cli
 
 runner = CliRunner()
 

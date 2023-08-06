@@ -1,11 +1,12 @@
-"""Help message for my CLI app. Change this."""
+"""CLI code for the package can live here."""
 
 
 import random
-from pathlib import Path
 from typing import Optional
 
 import typer
+
+from my_package import get_quotes
 
 # App object enclosing the commands.
 app = typer.Typer(help=__doc__)
@@ -14,9 +15,7 @@ app = typer.Typer(help=__doc__)
 @app.command()
 def quote(favorite: Optional[str] = None) -> None:
     """Print a random quote from Zoolander."""
-    # Static files will be in site-packages next to this file.
-    quotes_path = Path(__file__).parent / "static" / "my_quotes.txt"
-    quotes = quotes_path.read_text(encoding="utf-8").strip().split("\n")
+    quotes = get_quotes()
 
     # Filter quotes using the favorite filter.
     if favorite:

@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "my-cli"
+name = "my_package"
 version = "0.0.1"
 description = 'My package description'
 readme = "README.md"
@@ -50,7 +50,7 @@ test = [
 ]
 
 [project.scripts]
-my-cli = "my_cli.cli:app"
+my-cli = "my_package.cli:app"
 
 [project.urls]
 Documentation = "https://github.com/mygithubuser/mycli#readme"

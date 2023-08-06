@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "my-cli"
+name = "my_package"
 version = "0.0.1"
 description = 'My package description'
 readme = "README.md"
@@ -50,16 +50,16 @@ test = [
 ]
 
 [project.scripts]
-my-cli = "my_cli.cli:app"
+my-cli = "my_package.cli:app"
 
 [project.urls]
-Documentation = "https://github.com/mygithubuser/mycli#readme"
-Issues = "https://github.com/mygithubuser/mycli/issues"
-Source = "https://github.com/mygithubuser/mycli"
+Documentation = "https://github.com/my_github_user/my_package#readme"
+Issues = "https://github.com/my_github_user/my_package/issues"
+Source = "https://github.com/my_github_user/my_package"
 
 [tool.hatch.build]
 artifacts = [
-  "my-cli/static/**",
+  "my_package/static/**",
 ]
 
 [tool.hatch.envs.dev]
@@ -84,7 +84,7 @@ test = [
   "pytest -v",
 ]
 cov = [
-  "pytest -v --cov my_cli --cov-report xml --cov-fail-under=80",
+  "pytest -v --cov my_package --cov-report xml --cov-fail-under=80",
 ]
 
 [tool.bandit]

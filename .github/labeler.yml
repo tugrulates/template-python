@@ -1,0 +1,20 @@
+bug:
+  - head-branch: "^fix/"
+
+feature:
+  - head-branch: "^feature/"
+
+dependencies:
+  - head-branch: ^deps/"
+
+documentation:
+  - head-branch: ^doc/"
+
+performance:
+  - head-branch: "^perf/"
+
+refactor:
+  - head-branch: "^refactor/"
+
+testing:
+  - head-branch: "^test/"

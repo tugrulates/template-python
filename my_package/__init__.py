@@ -4,7 +4,6 @@ My app.
 Non-CLI code for the package can live here.
 """
 
-
 from pathlib import Path
 from typing import List
 

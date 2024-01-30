@@ -26,7 +26,6 @@ The following libraries and frameworks are configured and working out of the box
 -   [bandit](https://github.com/PyCQA/bandit) (Apache License): Security linter.
 -   [pytest](https://github.com/pytest-dev/pytest) (MIT License): Tests.
 -   [pytest-cov](https://github.com/pytest-dev/pytest-cov) (MIT License): Test coverage.
--   [pre-commit](https://github.com/pre-commit/pre-commit) (MIT License): Git hooks for sanity checks.
 -   [typer](https://github.com/tiangolo/typer) (MIT License): Library for parsing CLI arguments and storing configuration.
 -   [GitHub Actions](https://github.com/features/actions): Continuous integration.
 -   [GitHub Dependabot](https://github.com/features/security): Automated dependency updates.
@@ -63,12 +62,6 @@ All following setup is optional. They are meant to increase life-of-quality duri
 pip install hatch
 ```
 
--   Install and enable commit hooks for git
-
-```shell
-pip install pre-commit && pre-commit install-hooks
-```
-
 ## 💻 Development cycle
 
 -   Run your CLI app
@@ -89,19 +82,14 @@ hatch run dev:lint
 hatch run test:test
 ```
 
--   Run pre-commit checks on all files
-
-```shell
-pre-commit run --all-files
-```
-
 Check out the example app code to get accustomed to the setup. You will need to change any name that starts with “my”, like _my description_.
 
 ## 🤖 Continuous integration
 
 There is a robust CI pipeline already setup. It contains the following jobs.
 
--   **lint**: Checks that all lint checkers are happy and pre-commit would succeed.
+-   **lint**: Checks that all lint checkers are happy amd would succeed.
+-   **fmt**: Format code with black and isort.
 -   **test**: Checks that all unit tests are passing on Linux, Mac, and Windows, with different Python versions.
 -   **coverage**: Checks that code coverage is above 80%. Optionally, uploads coverage to [Codecov](https://codecov.io).
 -   **build**: Checks that a wheel is buildable and runs standard smoke tests against it.

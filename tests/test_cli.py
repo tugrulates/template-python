@@ -1,6 +1,5 @@
 """Unittests for the CLI."""
 
-
 from typer.testing import CliRunner
 
 from my_package import cli

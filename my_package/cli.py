@@ -1,6 +1,5 @@
 """CLI code for the package can live here."""
 
-
 import random
 from typing import Optional
 

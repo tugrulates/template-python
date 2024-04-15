@@ -24,15 +24,15 @@ classifiers = [
 ]
 
 dependencies = [
-  "typer[all]==0.12.1",
+  "typer[all]==0.12.3",
 ]
 
 [project.optional-dependencies]
 dev = [
   "bandit[toml]==1.7.8",
-  "black==24.3.0",
+  "black==24.4.0",
   "flake8-bugbear==24.2.6",
-  "flake8-builtins==2.4.0",
+  "flake8-builtins==2.5.0",
   "flake8-comprehensions==3.14.0",
   "flake8-docstrings==1.7.0",
   "flake8-encodings[classes]==0.5.1",

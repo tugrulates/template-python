@@ -31,7 +31,7 @@ dependencies = [
 dev = [
   "bandit[toml]==1.7.10",
   "black==24.10.0",
-  "flake8-bugbear==24.8.19",
+  "flake8-bugbear==24.10.31",
   "flake8-builtins==2.5.0",
   "flake8-comprehensions==3.16.0",
   "flake8-docstrings==1.7.0",
@@ -45,7 +45,7 @@ dev = [
   "pytest==8.3.3",
 ]
 test = [
-  "pytest-cov==5.0.0",
+  "pytest-cov==6.0.0",
   "pytest==8.3.3",
 ]
 

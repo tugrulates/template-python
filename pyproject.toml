@@ -24,7 +24,7 @@ classifiers = [
 ]
 
 dependencies = [
-  "typer[all]==0.15.2",
+  "typer[all]==0.15.3",
 ]
 
 [project.optional-dependencies]
@@ -40,7 +40,7 @@ dev = [
   "flake8==7.2.0",
   "isort==6.0.1",
   "mypy==1.15.0",
-  "pep8-naming==0.14.1",
+  "pep8-naming==0.15.0",
   "pytest==8.3.5",
 ]
 test = [

@@ -41,11 +41,11 @@ dev = [
   "isort==6.0.1",
   "mypy==1.16.0",
   "pep8-naming==0.15.1",
-  "pytest==8.3.5",
+  "pytest==8.4.0",
 ]
 test = [
   "pytest-cov==6.1.1",
-  "pytest==8.3.5",
+  "pytest==8.4.0",
 ]
 
 [project.scripts]

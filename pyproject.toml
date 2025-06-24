@@ -29,7 +29,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-  "bandit[toml]==1.8.3",
+  "bandit[toml]==1.8.5",
   "black==25.1.0",
   "flake8-bugbear==24.12.12",
   "flake8-comprehensions==3.16.0",
@@ -37,15 +37,15 @@ dev = [
   "flake8-encodings[classes]==0.5.1",
   "flake8-return==1.2.0",
   "flake8-simplify==0.22.0",
-  "flake8==7.2.0",
+  "flake8==7.3.0",
   "isort==6.0.1",
-  "mypy==1.16.0",
+  "mypy==1.16.1",
   "pep8-naming==0.15.1",
-  "pytest==8.4.0",
+  "pytest==8.4.1",
 ]
 test = [
   "pytest-cov==6.2.1",
-  "pytest==8.4.0",
+  "pytest==8.4.1",
 ]
 
 [project.scripts]

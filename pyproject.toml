@@ -24,7 +24,7 @@ classifiers = [
 ]
 
 dependencies = [
-  "typer[all]==0.16.1",
+  "typer[all]==0.17.3",
 ]
 
 [project.optional-dependencies]

@@ -32,19 +32,19 @@ dev = [
   "bandit[toml]==1.8.6",
   "black==25.1.0",
   "flake8-bugbear==24.12.12",
-  "flake8-comprehensions==3.16.0",
+  "flake8-comprehensions==3.17.0",
   "flake8-docstrings==1.7.0",
   "flake8-encodings[classes]==0.5.1",
   "flake8-return==1.2.0",
   "flake8-simplify==0.22.0",
   "flake8==7.3.0",
   "isort==6.0.1",
-  "mypy==1.17.1",
+  "mypy==1.18.1",
   "pep8-naming==0.15.1",
   "pytest==8.4.2",
 ]
 test = [
-  "pytest-cov==6.3.0",
+  "pytest-cov==7.0.0",
   "pytest==8.4.2",
 ]
 

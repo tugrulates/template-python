@@ -54,7 +54,7 @@ If running locally instead, you will need Python3 with [hatch](https://github.co
 
 Skip this section if you are using Dev Containers or Codespaces.
 
-All following setup is optional. They are meant to increase life-of-quality during development.
+All following setup is optional. They are meant to increase quality-of-life during development.
 
 -   To run 'hatch' commands (see below):
 
@@ -88,7 +88,7 @@ Check out the example app code to get accustomed to the setup. You will need to 
 
 There is a robust CI pipeline already setup. It contains the following jobs.
 
--   **lint**: Checks that all lint checkers are happy amd would succeed.
+-   **lint**: Checks that all lint checkers are happy and would succeed.
 -   **fmt**: Format code with black and isort.
 -   **test**: Checks that all unit tests are passing on Linux, Mac, and Windows, with different Python versions.
 -   **coverage**: Checks that code coverage is above 80%. Optionally, uploads coverage to [Codecov](https://codecov.io).
@@ -108,6 +108,6 @@ I hope you will find this template useful. You can create an issue if you have a
 
 ## 🚩 Roadmap
 
-The project scaffolds a basic CLI application. You can build upon this for your own, or you can strip the CLI parts altogether to build a different type of Python package. Actual templating a la [Cookiecuter](https://www.cookiecutter.io/) could be useful.
+The project scaffolds a basic CLI application. You can build upon this for your own, or you can strip the CLI parts altogether to build a different type of Python package. Actual templating a la [Cookiecutter](https://www.cookiecutter.io/) could be useful.
 
 This project does not yet include an end-to-end test. It would be an improvement to automatically download CI artifacts from the main branch and run tests against them.

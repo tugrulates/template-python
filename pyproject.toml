@@ -39,12 +39,12 @@ dev = [
   "flake8-simplify==0.30.0",
   "flake8==7.3.0",
   "isort==8.0.1",
-  "mypy==1.19.1",
+  "mypy==1.20.0",
   "pep8-naming==0.15.1",
   "pytest==9.0.2",
 ]
 test = [
-  "pytest-cov==7.0.0",
+  "pytest-cov==7.1.0",
   "pytest==9.0.2",
 ]
 

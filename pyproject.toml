@@ -24,22 +24,22 @@ classifiers = [
 ]
 
 dependencies = [
-  "typer[all]==0.27.0",
+  "typer[all]==0.27.2",
 ]
 
 [project.optional-dependencies]
 dev = [
   "bandit[toml]==1.9.4",
   "black==26.5.1",
-  "flake8-bugbear==25.11.29",
+  "flake8-bugbear==26.9.9",
   "flake8-comprehensions==3.17.0",
   "flake8-docstrings==1.7.0",
   "flake8-encodings[classes]==0.5.1",
   "flake8-return==1.2.0",
   "flake8-simplify==0.30.0",
-  "flake8==7.3.0",
-  "isort==8.0.1",
-  "mypy==2.3.0",
+  "flake8==7.4.1",
+  "isort==9.0.1",
+  "mypy==2.3.1",
   "pep8-naming==0.15.1",
   "pytest==9.1.1",
 ]
